@@ -393,14 +393,14 @@ static int dhd_wlan_set_carddetect(bool val)
 	return 0;
 }
 
-/* Customized Locale table : OPTIONAL feature */
+/* Customized Locale table : OPTIONAL feature ##defined at wl_iw already##
 #define WLC_CNTRY_BUF_SZ        4
 struct cntry_locales_custom {
 	char iso_abbrev[WLC_CNTRY_BUF_SZ];
 	char custom_locale[WLC_CNTRY_BUF_SZ];
 	int  custom_locale_rev;
 };
-
+*/
 
 static struct cntry_locales_custom brcm_wlan_translate_custom_table[] = {
 	/* Table should be filled out based on custom platform regulatory requirement */
