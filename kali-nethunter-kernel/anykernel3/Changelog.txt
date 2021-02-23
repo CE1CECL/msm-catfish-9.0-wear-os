@@ -1,4 +1,5 @@
-====================     2021-02-23    ====================1523854  Linux 3.18.123  [Greg Kroah-Hartman]
+====================     2021-02-23    ====================c72c9e5  Few fixes after merge from v3.18.120 -> v3.18.123 kernel  [kimocoder]
+1523854  Linux 3.18.123  [Greg Kroah-Hartman]
 d8093eb  USB: serial: ti_usb_3410_5052: fix array underflow in completion handler  [Johan Hovold]
 0ea6824  drm/panel: type promotion bug in s6e8aa0_read_mtp_id()  [Dan Carpenter]
 be4f0ee  ALSA: pcm: Fix snd_interval_refine first/last with open min/max  [Timo Wischer]
