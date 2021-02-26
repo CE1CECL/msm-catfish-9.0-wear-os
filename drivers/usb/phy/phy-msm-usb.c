@@ -104,7 +104,7 @@ module_param(lpm_disconnect_thresh , uint, S_IRUGO | S_IWUSR);
 MODULE_PARM_DESC(lpm_disconnect_thresh,
 	"Delay before entering LPM on USB disconnect");
 
-static bool floated_charger_enable = 1;
+static bool floated_charger_enable;
 module_param(floated_charger_enable , bool, S_IRUGO | S_IWUSR);
 MODULE_PARM_DESC(floated_charger_enable,
 	"Whether to enable floated charger");
@@ -2915,11 +2915,6 @@ static void msm_otg_sm_work(struct work_struct *w)
 				get_pm_runtime_counter(otg->phy->dev), 0);
 			/* Delay used only if autosuspend enabled */
 			pm_runtime_mark_last_busy(dev);
-			if(dev->power.usage_count.counter > 1) {
-				pr_err("usage_count = %d is error and adjust it  to 1\n",
-					dev->power.usage_count.counter);
-				atomic_set(&dev->power.usage_count, 1);
-			}
 			pm_runtime_put_autosuspend(dev);
 		}
 		break;
@@ -3071,13 +3066,13 @@ static void msm_otg_set_vbus_state(int online)
 		return;
 
 	if (online) {
-		pr_info("PMIC: BSV set\n");
+		pr_debug("PMIC: BSV set\n");
 		msm_otg_dbg_log_event(&motg->phy, "PMIC: BSV SET",
 				init, motg->inputs);
 		if (test_and_set_bit(B_SESS_VLD, &motg->inputs) && init)
 			return;
 	} else {
-		pr_info("PMIC: BSV clear\n");
+		pr_debug("PMIC: BSV clear\n");
 		msm_otg_dbg_log_event(&motg->phy, "PMIC: BSV CLEAR",
 				init, motg->inputs);
 		motg->is_ext_chg_dcp = false;
