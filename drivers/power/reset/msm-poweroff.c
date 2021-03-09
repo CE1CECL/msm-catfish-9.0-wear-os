@@ -60,7 +60,7 @@ static void scm_disable_sdi(void);
 * There is no API from TZ to re-enable the registers.
 * So the SDI cannot be re-enabled when it already by-passed.
 */
-static int download_mode;
+static int download_mode = 1;
 #else
 static const int download_mode;
 #endif
@@ -395,9 +395,7 @@ static void do_msm_restart(enum reboot_mode reboot_mode, const char *cmd)
 
 static void do_msm_poweroff(void)
 {
-	pr_err("Powering off the SoC val\n");
-	if (device_is_charging)
-		qpnp_pon_set_restart_reason(PON_RESTART_REASON_TEST);
+	pr_notice("Powering off the SoC\n");
 
 	set_dload_mode(0);
 	scm_disable_sdi();

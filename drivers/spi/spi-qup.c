@@ -45,7 +45,7 @@
 #define SPI_ERROR_FLAGS_EN		0x030c
 
 /* QUP_CONFIG fields */
-#define QUP_CONFIG_SPI_MODE		((1 << 8)|0x03)
+#define QUP_CONFIG_SPI_MODE		(1 << 8)
 #define QUP_CONFIG_CLOCK_AUTO_GATE	BIT(13)
 #define QUP_CONFIG_NO_INPUT		BIT(7)
 #define QUP_CONFIG_NO_OUTPUT		BIT(6)
@@ -627,7 +627,7 @@ static int spi_qup_probe(struct platform_device *pdev)
 	if (ret)
 		goto error;
 
-	pm_runtime_set_autosuspend_delay(dev, 30);
+	pm_runtime_set_autosuspend_delay(dev, MSEC_PER_SEC);
 	pm_runtime_use_autosuspend(dev);
 	pm_runtime_set_active(dev);
 	pm_runtime_enable(dev);

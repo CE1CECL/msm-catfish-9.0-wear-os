@@ -14,6 +14,7 @@ if MTD
 
 config MTD_TESTS
 	tristate "MTD tests support (DANGEROUS)"
+	depends on m
 	help
 	  This option includes various MTD tests into compilation. The tests
 	  should normally be compiled as kernel modules. The modules perform
