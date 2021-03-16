@@ -1,4 +1,4 @@
-====================     2021-02-26    ====================d581d5b  Merge BLUETOOTH fixes  [kimocoder]
+====================     2021-02-26    ====================
 35da615  Merge a bunch of USB fixes  [kimocoder]
 8ff694f  Update android binder + ashmem + lowmemorykiller  [kimocoder]
 73d2bed  Merge changes  [kimocoder]
@@ -823,7 +823,7 @@ d48f748  Input: xpad - add Covert Forces edition of the Xbox One controller  [Er
 e93bd66  Input: xpad - re-send LED command on present event  [Pavel Rojtberg]
 c894132  Input: xpad - set the LEDs properly on XBox Wireless controllers  [Pierre-Loup A. Griffais]
 7d593eb  Input: xpad - add rumble support for Xbox One controller  [Ming-ting Yao Wei]
-58eaf7e  Input: initialize device counter variables with -1  [Aniroop Mathur]
+====================     2021-02-23    ====================58eaf7e  Input: initialize device counter variables with -1  [Aniroop Mathur]
 b7ccf8c  arm64: remove no-op -p linker flag  [Greg Hackmann]
 88c577b  tmpfs: make lseek(SEEK_DATA/SEK_HOLE) return ENXIO with a negative offset  [Yufen Yu]
 0a022ed  powerpc/numa: Suppress "VPHN is not supported" messages  [Satheesh Rajendran]
